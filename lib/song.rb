@@ -43,7 +43,7 @@ class Song
   end
 
   def self.new_from_filename(filename)
-    name = filename.slice()
+    name = filename.slice(/\A(.*)-/).slice(-2)
     song = Song.new(name, artist_name)
     @@all << song
     song
