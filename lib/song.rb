@@ -43,7 +43,7 @@ class Song
   end
 
   def self.new_from_filename(filename)
-    name = filename.split()
+    name = filename.slice()
     song = Song.new(name, artist_name)
     @@all << song
     song
