@@ -48,10 +48,18 @@ class Song
   def self.new_from_filename(filename)
     artist_name = filename.slice(/\A(.*)-/).slice(0..-3)
     name = filename.slice(/-.*/).slice(2..-5)
-    #binding.pry
     song = Song.new(name, artist_name)
     @@all << song
     song
   end
+
+  def self.create_from_filename(filename)
+    artist_name = filename.slice(/\A(.*)-/).slice(0..-3)
+    name = filename.slice(/-.*/).slice(2..-5)
+    song = Song.new(name, artist_name)
+    @@all << song
+    song
+  end
+
 
 end
